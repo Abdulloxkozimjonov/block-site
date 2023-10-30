@@ -18,26 +18,13 @@
                 <p>
                     <img src="{% static 'assets/images/about.jpg' %}" alt="" class="img-rounded pull-right" width="300">
                 </p>
-                <p>about us </p>
-                <h3>Our Achievements</h3>
+                <p>{{ about.title }}</p>
+                <h3>{{ about.text }}</h3>
                 <strong>{{ about.date }}</strong>
                 <p>{{ i.description }}</p>
             </section>
             <!-- /main -->
 
-            <!-- Sidebar -->
-            <aside class="col-sm-4 sidebar sidebar-right">
-
-                <div class="panel">
-                    <h4>Latest News</h4>
-                    <ul class="list-unstyled list-spaces">
-                        <li><a href="">Responsive Design</a><br>
-                            <span class="small text-muted">{{ about.description }}</span></li>
-                    </ul>
-                </div>
-
-            </aside>
-            <!-- /Sidebar -->
 
         </div>
     </section>
@@ -47,7 +34,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <h3>Our Team</h3>
-                    <p>{{ about.description }}</p>
+                    <p>{{ about.title }}</p>
                     <br />
                 </div>
             </div>

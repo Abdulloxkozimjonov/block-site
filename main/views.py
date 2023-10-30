@@ -10,7 +10,7 @@ from django.contrib.auth.decorators import login_required
 def index_view(request):
     context={
         "courses":Courses.objects.all().order_by("-id")[:3],
-        "about":About.objects.all(),
+        "about":About.objects.last(),
         "baner": Baner.objects.all().order_by("-id")[:4],
         "user":request.user,
     }
@@ -57,6 +57,7 @@ def videos_view(request):
 @login_required(login_url="login_url")
 def contact_view(request):
     context = {
+        "info":Info.objects.last(),
         "user": request.user
     }
     return render(request,"contact.html",context)

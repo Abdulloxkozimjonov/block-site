@@ -27,4 +27,5 @@ admin.site.register(Courses)
 admin.site.register(Price)
 admin.site.register(Info)
 admin.site.register(Video)
+admin.site.register(Contact)
 
