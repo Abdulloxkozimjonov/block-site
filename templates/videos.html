@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+		<header id="head" class="secondary">
+            <div class="container">
+                    <h1>Online Videos</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing eliras scele!</p>
+                </div>
+    </header>
+
+
+	<!-- container -->
+	<section class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<section id="portfolio" class="page-section section appear clearfix">
+					<br />
+					<br />
+
+
+					<div class="row">
+						<nav id="filter" class="col-md-12 text-center">
+							<ul>
+								<li><a href="#" class="current btn-theme btn-small" data-filter="*">All</a></li>
+								{% for i in category %}
+								<li><a href="{{ i.category }}" class="btn-theme btn-small" data-filter=".{{i.name}}">{{i.name}}</a></li>
+								{% endfor %}
+							</ul>
+						</nav>
+						<div class="col-md-12">
+							<div class="row">
+								<div class="portfolio-items isotopeWrapper clearfix" id="3">
+									{% for i in video %}
+									<article class="col-sm-4 isotopeItem {{i.category}}">
+										<div class="portfolio-item">
+											<img src="{{ i.img.url }}" alt="" />
+											<div class="portfolio-desc align-center">
+												<div class="folio-info">
+													<a href="assets/images/portfolio/img1.jpg" class="fancybox">
+														<h5>{{ i.title }}</h5>
+														<i class="fa fa-link fa-2x"></i></a>
+												</div>
+											</div>
+										</div>
+									</article>
+									{% endfor %}
+
+								</div>
+
+							</div>
+
+
+						</div>
+					</div>
+
+				</section>
+			</div>
+		</div>
+
+	</section>
+	<!-- /container -->
+{% endblock %}

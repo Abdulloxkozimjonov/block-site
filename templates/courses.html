@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+		<header id="head" class="secondary">
+            <div class="container">
+                    <h1>Courses</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing eliras scele!</p>
+                </div>
+    </header>
+
+    
+    <div class="container">
+<h3>Courses</h3>
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+</p>
+<br/>
+<ul class="list-unstyled video-list-thumbs row">
+	{% for i in courses %}
+	<li class="col-lg-3 col-sm-4 col-xs-6">
+			<img src="{% static 'assets/images/mqdefault.jpg' %}" alt="Barca" class="img-responsive" height="130px" />
+			<h2>{{ i.title }}</h2>
+			<span class="play-button"></span>
+	</li>
+	{% endfor %}
+</ul>
+
+</div>
+	<div id="courses">
+		<section class="container">
+			<h3>Development Courses</h3>
+			<div class="row">
+				{% for i in courses %}
+				<div class="col-md-4">
+					<div class="featured-box"> 
+						<div class="text">
+							<h3>{{ i.title }}</h3>
+							{{ description }}
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+			</div>
+		</section>
+	</div>
+{% endblock %}

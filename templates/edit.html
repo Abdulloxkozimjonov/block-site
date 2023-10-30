@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>EDIT</h1>
+    <form action="{% url 'update_url' user.id %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="username" value="{{ user.username }}" required>
+        <input type="email" name="email" value="{{ user.email }}">
+        <input type="text" name="first_name" value="{{ user.first_name }}">
+        <input type="text" name="last_name" value="{{ user.last_name }}">
+        <input type="text" name="phone_number" value="{{ user.phone_number }}">
+        <input type="text" name="bio" value="{{ user.bio }}">
+        <input type="password" name="password">
+        <input type="password" name="confirm_password">
+        <button type="submit">Saqlash</button>
+    </form>
+</body>
+</html>

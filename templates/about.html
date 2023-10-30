@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+ 	<header id="head" class="secondary">
+            <div class="container">
+                    <h1>About Us</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing eliras scele!</p>
+                </div>
+    </header>
+
+
+    <!-- container -->
+    <section class="container">
+        <div class="row">
+            <!-- main content -->
+            <section class="col-sm-8 maincontent">
+                <h3>About Us</h3>
+                <p>
+                    <img src="{% static 'assets/images/about.jpg' %}" alt="" class="img-rounded pull-right" width="300">
+                </p>
+                <p>about us </p>
+                <h3>Our Achievements</h3>
+                <strong>{{ about.date }}</strong>
+                <p>{{ i.description }}</p>
+            </section>
+            <!-- /main -->
+
+            <!-- Sidebar -->
+            <aside class="col-sm-4 sidebar sidebar-right">
+
+                <div class="panel">
+                    <h4>Latest News</h4>
+                    <ul class="list-unstyled list-spaces">
+                        <li><a href="">Responsive Design</a><br>
+                            <span class="small text-muted">{{ about.description }}</span></li>
+                    </ul>
+                </div>
+
+            </aside>
+            <!-- /Sidebar -->
+
+        </div>
+    </section>
+    <!-- /container -->
+    <section class="team-content">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Our Team</h3>
+                    <p>{{ about.description }}</p>
+                    <br />
+                </div>
+            </div>
+            <div class="row">
+                {% for i in about %}
+                <div class="col-md-3 col-sm-6 col-xs-6">
+                    <!-- Team Member -->
+                    <div class="team-member">
+                        <!-- Image Hover Block -->
+                        <div class="member-img">
+                            <!-- Image  -->
+                            <img class="img-responsive" src="{% static 'assets/images/photo-1.jpg' %}" alt="">
+                        </div>
+                        <!-- Member Details -->
+                        <h4>{{ i.name }}</h4>
+                        <!-- Designation -->
+                        <span class="pos">{{ i.description }}</span>
+                        <div class="team-socials">
+                            <a href="{{ about.facebook }}"><i class="fa fa-facebook"></i></a>
+                            <a href="{{ about.google }}"><i class="fa fa-google-plus"></i></a>
+                            <a href="{{ about.twitter }}"><i class="fa fa-twitter"></i></a>
+                            <a href="{{ about.dribbble }}"><i class="fa fa-dribbble"></i></a>
+                            <a href="{{ about.github }}"><i class="fa fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

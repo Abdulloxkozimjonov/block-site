@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block content %}
+		<header id="head" class="secondary">
+            <div class="container">
+                    <h1>Our Price</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing eliras scele!</p>
+                </div>
+    </header>
+
+
+	<!-- container -->
+	<div class="container">
+		<div class="row">
+			<!-- Article content -->
+			<section class="col-sm-12 maincontent">
+				<h3>Cost</h3>
+				<p>
+					Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+				</p>
+
+			</section>
+		</div>
+	</div>
+	<!-- /container -->
+
+	<section class="container">
+		<div class="heading">
+			<!-- Heading -->
+		</div>
+		<div class="row flat">
+			{% for i in price %}
+			<div class="col-lg-3 col-md-3 col-xs-6">
+				<ul class="plan plan1">
+					<li class="plan-name">{{ i.title }}
+					</li>
+					<li class="plan-price">
+						<strong>{{ i.price }} so'm</strong> {{ i.name }}
+					</li>
+					<li class="plan-action">
+						<a href="#" class="btn">Signup</a>
+					</li>
+				</ul>
+			</div>
+			{% endfor %}
+		</div>
+	</section>
+{% endblock %}

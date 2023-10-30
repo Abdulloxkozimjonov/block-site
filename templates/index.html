@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+	<!-- Header -->
+	<header id="head">
+		<div class="container">
+             <div class="heading-text">							
+							<h1 class="animated flipInY delay1">Start Online Education</h1> <br/>
+							<p>Free Online education template for elearning and online education institute.</p>
+						</div>
+            
+					<div class="fluid_container">                       
+                    <div class="camera_wrap camera_emboss pattern_1" id="camera_wrap_4">
+                        <div data-thumb="{% static 'assets/images/slides/thumbs/img1.jpg' %}" data-src="{% static 'assets/images/slides/img1.jpg' %}">
+                            <h2>We develop.</h2>
+                        </div>
+                        <div data-thumb="{% static 'assets/images/slides/thumbs/img2.jpg' %}" data-src="{% static 'assets/images/slides/img2.jpg' %}">
+                        </div>
+                        <div data-thumb="{% static 'assets/images/slides/thumbs/img3.jpg' %}" data-src="{% static 'assets/images/slides/img3.jpg' %}">
+                        </div> 
+                    </div><!-- #camera_wrap_3 -->
+                </div><!-- .fluid_container -->
+		</div>
+	</header>
+	<!-- /Header -->
+<section class="features">
+  <div class="container">
+    <div class="row">
+        {% for i in baner %}
+					<div class="col-md-3">
+						<div class="grey-box-icon b1"> 
+							<h4>{{ i.title }}</h4>
+                            <p>{{ i.description }}</p>
+     						<p><em>Read More</em></p>
+						</div><!--grey box -->
+					</div><!--/span3-->
+        {% endfor %}
+				</div>
+    </div>
+	</section>
+      <section class="news-box top-margin">
+        <div class="container">
+            <h2><span>New Courses</span></h2>
+            <div class="row">
+                {% for i in courses %}
+                <div class="col-lg-4 col-md-4 col-sm-12">
+                    <div class="newsBox">
+                        <div class="thumbnail">
+                            <figure><img src="{% static 'assets/images/news2.jpg' %}" alt=""></figure>
+                            <div class="caption maxheight2">
+                            <div class="box_inner">
+                                        <div class="box">
+                                            <p class="title"><h4>{{ i.title }}</h4></p>
+                                            <p>{{ i.description }}</p>
+                                        </div> 
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+   
+  
+	
+      <section class="container">
+      <div class="row">
+      	<div class="col-md-8"><div class="title-box clearfix "><h2 class="title-box_primary">About Us</h2></div> 
+        <p><span>{{ about.description }}</span></p>
+        <a href="#" title="read more" class="btn-inline " target="_self">read more</a> </div>
+              
+          
+          <div class="col-md-4"><div class="title-box clearfix "><h2 class="title-box_primary">Up Coming Courses</h2></div> 
+            <div class="list styled custom-list">
+            <ul>
+            <li><a title="Snatoque penatibus et magnis dis partu rient montes ascetur ridiculus mus." href="#">{{ i.name }}</a></li>
+            </ul>
+            </div>
+         </div>
+      </div>
+      </section>
+{% endblock %}
